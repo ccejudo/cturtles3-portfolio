@@ -2,6 +2,8 @@ from flask import Flask, render_template, url_for, request, redirect, json
 import os
 import json
 
+import flask
+
 app = Flask(__name__)
 data_file = open('./static/data.json')
 data = json.load(data_file)
@@ -20,8 +22,10 @@ def about(name):
     allUsers = data
     return render_template("about.html", name=name, userData=userData, allUsers=allUsers)
 
-
+@app.route('/health')
+def health():
+    if request.method == 'GET':
+        return flask.Response( status=200 )
 
 if __name__ == "__main__":
-    # rid (port="5002") within run function
-    app.run(debug=True) 
+    app.run() 

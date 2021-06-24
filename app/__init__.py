@@ -1,13 +1,20 @@
 from flask import Flask, render_template, url_for, request, redirect, json
+from . import db
 import os
 import json
 
-import flask
-
 app = Flask(__name__)
-data_file = open('./static/data.json')
+app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+db.init_app(app)
+
+data_file = open('./app/static/data.json')
 data = json.load(data_file)
 #data_file.close()
+
+########## Back ##########
+
+
+########## Front ##########
 
 #Create URL routes
 @app.route('/')

@@ -9,6 +9,7 @@ instance/
 .pytest_cache/
 .coverage
 htmlcov/
+flask.sqlite
 
 dist/
 build/

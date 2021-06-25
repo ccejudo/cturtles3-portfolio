@@ -16,7 +16,6 @@ data = json.load(data_file)
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
-    print('hola')
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -43,7 +42,7 @@ def register():
             return error, 418
 
     ## TODO: Return a register page
-    return "Register Page not yet implemented", 501
+    return render_template("register.html")
 
 @app.route('/login', methods=('GET', 'POST'))
 def login():
@@ -67,7 +66,7 @@ def login():
             return error, 418
     
     ## TODO: Return a login page
-    return "Login Page not yet implemented", 501
+    return render_template("login.html")
 
 ########## Front ##########
 

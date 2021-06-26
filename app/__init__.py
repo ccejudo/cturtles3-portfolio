@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, json, flash
+from flask import Flask, Response, render_template, url_for, request, redirect, json, flash
 from flask_toastr import Toastr
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
@@ -88,8 +88,7 @@ def about(name):
 
 @app.route('/health')
 def health():
-    if request.method == 'GET':
-        return flask.Response( status=200 )
+    return Response( status=200 )
 
 if __name__ == "__main__":
     app.run() 

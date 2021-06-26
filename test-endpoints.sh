@@ -7,6 +7,6 @@ endpoints=("/" "/register" "/login" "/about/cristopher" "/about/nhi" "/about/yen
 for endpoint in "${endpoints[@]}"
 do
     url="${domain}${endpoint}"
-    printf "#### Testing route: ${endpoint} ###\n"
+    printf "#### Testing route: ${endpoint} ####\n"
     curl -s -D - -o /dev/null "${url}"
 done

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {{ toastr.include_jquery() }}
+    {{ toastr.include_toastr_css() }}
+    {{ toastr.message() }}
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>C Turtles Team 3</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
     <link href="../static/styles/signin.css" rel="stylesheet">
 </head>
 <body>
+    {{ toastr.include_toastr_js() }}
     <div class='form--wrapper'>
         <div class='form--container'>
             <h2>Log in to our portfolio!</h2>

@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for, request, redirect, json
+from flask import Flask, render_template, url_for, request, redirect, json, flash
+from flask_toastr import Toastr
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 import os
@@ -6,7 +7,9 @@ import json
 
 app = Flask(__name__)
 app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 db.init_app(app)
+toastr = Toastr(app)
 
 data_file = open('./app/static/data.json')
 data = json.load(data_file)
@@ -37,9 +40,9 @@ def register():
                 (username, generate_password_hash(password))
             )
             db_instance.commit()
-            return f"User {username} created successfully"
+            flash(f"User {username} created successfully", 'success')
         else:
-            return error, 418
+            flash(error, 'error')
 
     ## TODO: Return a register page
     return render_template("register.html")
@@ -61,9 +64,9 @@ def login():
             error = 'Incorrect password.'
 
         if error is None:
-            return "Login Successful", 200 
+            flash("Login Successful", 'success')
         else:
-            return error, 418
+            flash(error, 'error')
     
     ## TODO: Return a login page
     return render_template("login.html")

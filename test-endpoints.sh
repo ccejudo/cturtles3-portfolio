@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script to test backend routes of the portfolio
 
-domain='https://mlh-cristopher-portfolio.duckdns.org'
+domain='http://mlh-cristopher-portfolio.duckdns.org'
 endpoints=("/" "/register" "/login" "/about/cristopher" "/about/nhi" "/about/yenyu" "/health")
 
 for endpoint in "${endpoints[@]}"

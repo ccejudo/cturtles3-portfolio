@@ -103,6 +103,12 @@
                 "description": "Multipataform C++ project that align a face of an input image by identifying the eyes region to obtain a translation, scale and angle to transform the image into a normalized and rotated representation of the face.",
                 "image": "https://www.allprodad.com/wp-content/uploads/2021/03/05-12-21-happy-people.jpg",
                 "link": "https://github.com/ccejudo/face_alignment"
+            },
+            {
+                "title": "C Turtles Portfolio",
+                "description": "Web Portfolio application written in Python using the Flask framework. Orientation Hackathon Winner.",
+                "image": "https://cdn.shopify.com/s/files/1/0137/6210/1348/collections/3474b44f27f6fba1480de1213ba64530_31b99d97-ac67-443a-86aa-f76f15aa8944_2000x.jpg?v=1620155900",
+                "link": "https://github.com/MLH-Fellowship/cturtles3-portfolio"
             }
         ],
         "social" : [

@@ -121,10 +121,9 @@ def about(name):
         "about.html", name=name, userData=userData, allUsers=allUsers
     )
 
-
-""" @app.route("/health")
+@app.route("/health")
 def health():
-    return "Works" """
+    return "Works"
 
 
 if __name__ == "__main__":

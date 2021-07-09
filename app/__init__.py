@@ -121,6 +121,7 @@ def about(name):
         "about.html", name=name, userData=userData, allUsers=allUsers
     )
 
+
 @app.route("/health")
 def health():
     return "Works"

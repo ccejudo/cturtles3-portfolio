@@ -122,9 +122,9 @@ def about(name):
     )
 
 
-@app.route("/health")
+""" @app.route("/health")
 def health():
-    return "Works"
+    return "Works" """
 
 
 if __name__ == "__main__":

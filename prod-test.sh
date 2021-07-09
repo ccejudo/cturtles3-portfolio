@@ -3,10 +3,19 @@
 
 domain='https://mlh-cristopher-portfolio.duckdns.org'
 endpoints=("/" "/register" "/login" "/about/cristopher" "/about/nhi" "/about/yenyu" "/health")
+error=0
 
 for endpoint in "${endpoints[@]}"
 do
     url="${domain}${endpoint}"
-    printf "#### Testing route: ${endpoint} ####\n"
-    curl -s -D - -o /dev/null "${url}"
+    status=$(curl -s -o /dev/null -w "%{http_code}" "${url}")
+
+    printf "#### Testing route: ${endpoint} -> Status: ${status} ####\n"
+
+    if [[ $status -ne 200 ]]
+    then
+        error=1
+    fi   
 done
+
+exit $error
